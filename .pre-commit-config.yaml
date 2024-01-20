@@ -12,8 +12,3 @@ repos:
     -   id: check-ast
     -   id: double-quote-string-fixer
     -   id: debug-statements
-
--   repo: https://github.com/psf/black
-    rev: 23.3.0
-    hooks:
-      - id: black
