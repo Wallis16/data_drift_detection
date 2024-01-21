@@ -16,11 +16,11 @@ from src.utils import EntityNotFoundError
 from src.utils import get_reports_mapping
 from src.utils import list_periods
 
-PROJECTS_DIR: Path = Path("../reports")
-REPORTS_DIR_NAME: Text = "results"
+PROJECTS_DIR: Path = Path('reports')
+REPORTS_DIR_NAME: Text = 'results'
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     # Configure some styles
     set_page_container_style()
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Extract available project names and reports directory name
     projects: List[Text] = []
     for path in os.listdir(PROJECTS_DIR):
-        if not path.startswith("."):
+        if not path.startswith('.'):
             projects.append(path)
 
     try:

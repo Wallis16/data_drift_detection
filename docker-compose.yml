@@ -7,5 +7,3 @@ services:
       - "8501:5000"
     volumes:
       - "./reports:/data_monitoring/reports"
-volumes:
-  model_file:
