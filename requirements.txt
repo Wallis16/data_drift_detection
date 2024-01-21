@@ -4,6 +4,7 @@
 #
 #    pip-compile
 #
+pre-commit
 altair==4.0
     # via streamlit
 attrs==23.2.0

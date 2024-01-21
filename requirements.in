@@ -10,3 +10,4 @@ python-dotenv
 streamlit
 types-python-dateutil
 typing_extensions
+pre-commit

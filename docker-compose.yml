@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web:
+    image: data_monitoring:0.0.1
+    restart: always
+    ports:
+      - "8501:5000"
+    volumes:
+      - "./reports:/data_monitoring/reports"
+volumes:
+  model_file:
