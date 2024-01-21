@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY . /data_monitoring
 
-ENTRYPOINT ["streamlit", "run", "streamlit-app/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "streamlit-app/app.py", "--server.port=8501"]

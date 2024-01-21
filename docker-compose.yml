@@ -4,6 +4,6 @@ services:
     image: data_monitoring:0.0.1
     restart: always
     ports:
-      - "8501:5000"
+      - "8501:8501"
     volumes:
       - "./reports:/data_monitoring/reports"
