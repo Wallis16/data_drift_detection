@@ -1,24 +1,11 @@
 import smtplib, ssl
-import os
 
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-sender_email = os.getenv('SENDER_EMAIL')
-receiver_email = os.getenv('RECEIVER_EMAIL')
-password = os.getenv('EMAIL_PASSWORD')
-
-subject = 'An email with attachment from Python'
-body = 'This is an email with attachment sent from Python'
-mode = 'data_drift'
-
-def notification(sender_email, receiver_email, password, subject, mode):
+def notification(sender_email, receiver_email, password, subject, body, mode, reference_day, current_day):
 
     # Create a multipart message and set headers
     message = MIMEMultipart()
@@ -29,8 +16,7 @@ def notification(sender_email, receiver_email, password, subject, mode):
     # Add body to email
     message.attach(MIMEText(body, 'plain'))
 
-    reference_day, current_day = 1, 2
-    analysis_path = f'airflow/dags/reports/nyc_taxi/results/2023_01_0{reference_day}__2023_01_0{current_day}/'+'data_drift.html'
+    analysis_path = f'/opt/airflow/dags/reports/nyc_taxi/results/2023_01_0{reference_day}__2023_01_0{current_day}/'+'data_drift.html'
 
     with open(analysis_path, 'rb') as attachment:  # r to open file in READ mode
         part = MIMEBase('application', 'octet-stream')
@@ -46,7 +32,6 @@ def notification(sender_email, receiver_email, password, subject, mode):
     message.attach(part)
     text = message.as_string()
 
-    # Log in to server using secure context and send email
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as server:
         server.login(sender_email, password)
