@@ -1,0 +1,6 @@
+airflow/config
+airflow/logs
+airflow/plugins
+analysis
+data_manager
+reports

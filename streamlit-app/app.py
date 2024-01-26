@@ -16,7 +16,7 @@ from src.utils import EntityNotFoundError
 from src.utils import get_reports_mapping
 from src.utils import list_periods
 
-PROJECTS_DIR: Path = Path('reports')
+PROJECTS_DIR: Path = Path('airflow/dags/reports')
 REPORTS_DIR_NAME: Text = 'results'
 
 

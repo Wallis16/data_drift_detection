@@ -1,7 +1,7 @@
-version: '3.8'
+version: '2.14.0'
 services:
   web:
-    image: data_monitoring:0.0.1
+    image: visualize_drift:0.0.1
     restart: always
     ports:
       - "8501:8501"
