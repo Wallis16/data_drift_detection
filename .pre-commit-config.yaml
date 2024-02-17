@@ -12,3 +12,15 @@ repos:
     -   id: check-ast
     -   id: double-quote-string-fixer
     -   id: debug-statements
+
+-   repo: https://github.com/pycqa/pylint
+    rev: v3.0.3
+    hooks:
+    -   id: pylint
+        language: system
+        args:
+        - --max-line-length=88
+        - -d duplicate-code
+        - --disable=import-error
+        - --disable=pointless-statement
+        - --max-args=10

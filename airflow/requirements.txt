@@ -19,3 +19,4 @@ python-dateutil
 streamlit
 types-python-dateutil
 typing_extensions
+optuna
