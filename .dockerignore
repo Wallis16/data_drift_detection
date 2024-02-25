@@ -1,6 +1,7 @@
 airflow/config
 airflow/logs
 airflow/plugins
+airflow/mlruns
 analysis
 data_manager
 reports

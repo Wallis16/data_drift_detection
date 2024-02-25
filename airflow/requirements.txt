@@ -20,3 +20,4 @@ streamlit
 types-python-dateutil
 typing_extensions
 optuna
+mlflow==2.10.0
