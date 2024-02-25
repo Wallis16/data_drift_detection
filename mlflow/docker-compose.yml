@@ -1,0 +1,9 @@
+version: '2.14.0'
+services:
+  web:
+    image: mlflow_data_drift:0.0.1
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./data:/mlflow"
