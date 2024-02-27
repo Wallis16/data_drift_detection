@@ -21,8 +21,8 @@ sender_email_ = os.getenv('SENDER_EMAIL')
 receiver_email_ = os.getenv('RECEIVER_EMAIL')
 email_password_ = os.getenv('EMAIL_PASSWORD')
 
-REFERENCE_DAY = 1
-CURRENT_DAY = 4
+REFERENCE_DAY = 2
+CURRENT_DAY = 5
 
 default_args = {
     'owner': 'diogenes',
@@ -69,7 +69,7 @@ def condition_function(**kwargs):
     """<>"""
     ti = kwargs['ti']
     result = ti.xcom_pull(task_ids='data_drift_analysis_task')
-    return 'good_notification_task' if result else 'bad_notification_task'
+    return 'bad_notification_task' if result else 'good_notification_task'
 
 with DAG(dag_id='data_drift', schedule_interval='@once',
          default_args=default_args, catchup=False) as dag:
